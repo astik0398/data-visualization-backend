@@ -25,6 +25,15 @@ async function storeData(){
 }
 storeData()
 
+app.get('/datas', async(req, res)=> {
+    try {
+        const allData = await dataModel.find()
+        res.send(allData)
+    } catch (error) {
+        res.send({"err": error})
+    }
+})
+
 app.listen(process.env.PORT, async()=> {
     try {
         await connection
