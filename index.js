@@ -4,6 +4,7 @@ const app = express()
 const fs = require('fs')
 const {dataModel} = require('./models/data.modal')
 const cors = require('cors')
+require('dotenv').config()
 
 const allData = JSON.parse(fs.readFileSync('./data.json', 'utf-8'))
 app.use(cors())
@@ -24,11 +25,11 @@ async function storeData(){
 }
 storeData()
 
-app.listen(9090, async()=> {
+app.listen(process.env.PORT, async()=> {
     try {
         await connection
         console.log('connected to the db');
-        console.log('server running on port 9090');
+        console.log(`server running on port ${process.env.PORT}`);
     } catch (error) {
         console.log(error);
     }
