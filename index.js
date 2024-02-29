@@ -26,13 +26,13 @@ async function storeData(){
 }
 storeData()
 
-app.get('/datas', async(req, res)=> {
+app.get('/', async(req, res)=> {
     try {
         const allData = await dataModel.find()
         res.send(JSON.stringify(allData))
         console.log('data fetched successfuly');
     } catch (error) {
-        res.send({"err": error})
+        res.send({"error": error})
     }
 })
 
