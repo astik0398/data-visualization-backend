@@ -24,6 +24,7 @@ async function storeData(){
         console.log(error);
     }
 }
+
 storeData()
 
 app.get('/', async(req, res)=> {
