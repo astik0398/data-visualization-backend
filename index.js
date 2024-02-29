@@ -5,9 +5,10 @@ const fs = require('fs')
 const {dataModel} = require('./models/data.modal')
 const cors = require('cors')
 require('dotenv').config()
+app.use(cors())
+app.use(express.json())
 
 const allData = JSON.parse(fs.readFileSync('./data.json', 'utf-8'))
-app.use(cors())
 
 async function storeData(){
     try {

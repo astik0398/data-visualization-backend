@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const dataSchema = mongoose.Schema({
     end_year: String,
-        intensity: Number,
+        intensity: String,
         sector: String,
         topic: String,
         insight: String,
@@ -13,11 +13,11 @@ const dataSchema = mongoose.Schema({
         added: String,
         published: String,
         country: String,
-        relevance: Number,
+        relevance: String,
         pestle: String,
         source: String,
         title: String,
-        likelihood: Number
+        likelihood: String
 })
 
 const dataModel = mongoose.model('data', dataSchema)
