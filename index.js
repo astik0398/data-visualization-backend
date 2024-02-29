@@ -28,7 +28,8 @@ storeData()
 app.get('/datas', async(req, res)=> {
     try {
         const allData = await dataModel.find()
-        res.send(allData)
+        res.send(JSON.stringify(allData))
+        console.log('data fetched successfuly');
     } catch (error) {
         res.send({"err": error})
     }
