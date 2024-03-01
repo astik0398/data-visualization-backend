@@ -14,7 +14,7 @@ async function storeData(){
     try {
         const count = await dataModel.countDocuments();
         if(count==0){
-            await dataModel.insertMany(allData)
+            await dataModel.create(allData)
         console.log('data has been inserted');
         }
         else{
